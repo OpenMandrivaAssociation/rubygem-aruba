@@ -39,7 +39,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-, root, root, -)
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/
-#%{ruby_gemdir}/gems/%{oname}-%{version}/.bundle/
+#% {ruby_gemdir}/gems/% {oname}-% {version}/.bundle/
 %{ruby_gemdir}/gems/%{oname}-%{version}/.rvmrc
 %{ruby_gemdir}/gems/%{oname}-%{version}/.document
 %{ruby_gemdir}/gems/%{oname}-%{version}/config/
