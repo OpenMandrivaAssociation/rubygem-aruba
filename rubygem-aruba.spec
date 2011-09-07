@@ -1,7 +1,7 @@
 %define oname aruba
 
 Name:       rubygem-%{oname}
-Version:    0.2.6
+Version:    0.4.6
 Release:    %mkrel 1
 Summary:    CLI Steps for Cucumber, hand-crafted for you in Aruba
 Group:      Development/Ruby
@@ -39,10 +39,12 @@ rm -rf %{buildroot}
 %files
 %defattr(-, root, root, -)
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/
-%{ruby_gemdir}/gems/%{oname}-%{version}/.bundle/
+#%{ruby_gemdir}/gems/%{oname}-%{version}/.bundle/
 %{ruby_gemdir}/gems/%{oname}-%{version}/.rvmrc
 %{ruby_gemdir}/gems/%{oname}-%{version}/.document
 %{ruby_gemdir}/gems/%{oname}-%{version}/config/
+
+%{ruby_gemdir}/gems/%{oname}-%{version}/templates/
 %{ruby_gemdir}/gems/%{oname}-%{version}/cucumber.yml
 %{ruby_gemdir}/gems/%{oname}-%{version}/Gemfile
 %{ruby_gemdir}/gems/%{oname}-%{version}/features/
@@ -50,8 +52,9 @@ rm -rf %{buildroot}
 %doc %{ruby_gemdir}/doc/%{oname}-%{version}
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/LICENSE
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/Rakefile
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/README.rdoc
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/History.txt
+%doc %{ruby_gemdir}/gems/%{oname}-%{version}/README.md
+%doc %{ruby_gemdir}/gems/%{oname}-%{version}/Gemfile.lock
+%doc %{ruby_gemdir}/gems/%{oname}-%{version}/History.md
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/%{oname}.gemspec
 %{ruby_gemdir}/cache/%{oname}-%{version}.gem
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
