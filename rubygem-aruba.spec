@@ -1,8 +1,8 @@
 %define oname aruba
 
 Name:       rubygem-%{oname}
-Version:    0.4.6
-Release:    %mkrel 1
+Version:    0.4.11
+Release:    1
 Summary:    CLI Steps for Cucumber, hand-crafted for you in Aruba
 Group:      Development/Ruby
 License:    MIT
@@ -26,7 +26,6 @@ CLI Steps for Cucumber, hand-crafted for you in Aruba
 %build
 
 %install
-rm -rf %{buildroot}
 mkdir -p %{buildroot}%{ruby_gemdir}
 gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
             --force --rdoc %{SOURCE0}
@@ -34,13 +33,16 @@ gem install --local --install-dir %{buildroot}%{ruby_gemdir} \
 # clean vcs files
 rm -f %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/.git*
 %clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-, root, root, -)
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/
+%dir %{ruby_gemdir}/gems/%{oname}-%{version}/spec/
+%dir %{ruby_gemdir}/gems/%{oname}-%{version}/spec/%{oname}
 #% {ruby_gemdir}/gems/% {oname}-% {version}/.bundle/
 %{ruby_gemdir}/gems/%{oname}-%{version}/.rvmrc
+%{ruby_gemdir}/gems/%{oname}-%{version}/.rspec
+%{ruby_gemdir}/gems/%{oname}-%{version}/.travis.yml
 %{ruby_gemdir}/gems/%{oname}-%{version}/.document
 %{ruby_gemdir}/gems/%{oname}-%{version}/config/
 
@@ -48,12 +50,13 @@ rm -rf %{buildroot}
 %{ruby_gemdir}/gems/%{oname}-%{version}/cucumber.yml
 %{ruby_gemdir}/gems/%{oname}-%{version}/Gemfile
 %{ruby_gemdir}/gems/%{oname}-%{version}/features/
+%{ruby_gemdir}/gems/%{oname}-%{version}/spec/*.rb
+%{ruby_gemdir}/gems/%{oname}-%{version}/spec/%{oname}/*.rb
 %{ruby_gemdir}/gems/%{oname}-%{version}/lib/
 %doc %{ruby_gemdir}/doc/%{oname}-%{version}
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/LICENSE
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/Rakefile
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/README.md
-%doc %{ruby_gemdir}/gems/%{oname}-%{version}/Gemfile.lock
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/History.md
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/%{oname}.gemspec
 %{ruby_gemdir}/cache/%{oname}-%{version}.gem
