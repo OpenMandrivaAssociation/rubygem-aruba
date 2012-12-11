@@ -61,3 +61,25 @@ rm -f %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/.git*
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/%{oname}.gemspec
 %{ruby_gemdir}/cache/%{oname}-%{version}.gem
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
+
+
+%changelog
+* Wed Feb 15 2012 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.4.11-2
++ Revision: 774161
+- mass rebuild of ruby packages against ruby 1.9.1
+
+* Mon Jan 23 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.4.11-1
++ Revision: 766994
+- version update 0.4.11
+
+* Wed Sep 07 2011 Andrey Smirnov <asmirnov@mandriva.org> 0.4.6-1
++ Revision: 698646
+- rpmlint warning
+
+  + Alexander Barakin <abarakin@mandriva.org>
+    - imported package rubygem-aruba
+
+* Thu Dec 02 2010 Rémy Clouard <shikamaru@mandriva.org> 0.2.6-1mdv2011.0
++ Revision: 605292
+- import rubygem-aruba
+
