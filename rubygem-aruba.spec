@@ -34,17 +34,14 @@ rm -f %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/.git*
 %clean
 
 %files
-%defattr(-, root, root, -)
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/spec/
 %dir %{ruby_gemdir}/gems/%{oname}-%{version}/spec/%{oname}
-#% {ruby_gemdir}/gems/% {oname}-% {version}/.bundle/
 %{ruby_gemdir}/gems/%{oname}-%{version}/.rvmrc
 %{ruby_gemdir}/gems/%{oname}-%{version}/.rspec
 %{ruby_gemdir}/gems/%{oname}-%{version}/.travis.yml
 %{ruby_gemdir}/gems/%{oname}-%{version}/.document
 %{ruby_gemdir}/gems/%{oname}-%{version}/config/
-
 %{ruby_gemdir}/gems/%{oname}-%{version}/templates/
 %{ruby_gemdir}/gems/%{oname}-%{version}/cucumber.yml
 %{ruby_gemdir}/gems/%{oname}-%{version}/Gemfile
@@ -57,6 +54,7 @@ rm -f %{buildroot}%{ruby_gemdir}/gems/%{oname}-%{version}/.git*
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/Rakefile
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/README.md
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/History.md
+%doc %{ruby_gemdir}/gems/%{oname}-%{version}/CONTRIBUTING.md
 %doc %{ruby_gemdir}/gems/%{oname}-%{version}/%{oname}.gemspec
 %{ruby_gemdir}/cache/%{oname}-%{version}.gem
 %{ruby_gemdir}/specifications/%{oname}-%{version}.gemspec
