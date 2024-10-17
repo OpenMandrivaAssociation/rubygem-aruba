@@ -6,7 +6,7 @@ Release:	2
 Summary:    CLI Steps for Cucumber, hand-crafted for you in Aruba
 Group:      Development/Ruby
 License:    MIT
-URL:        http://github.com/aslakhellesoy/aruba
+URL:        https://github.com/aslakhellesoy/aruba
 Source0:    http://rubygems.org/gems/aruba-0.6.1.gem
 Requires:   rubygems
 Requires:   rubygem(cucumber) >= 0.9.4
